@@ -1,0 +1,6 @@
+// Exercice original de laboratoire ; adapter le schéma et la fenêtre.
+DeviceLogonEvents
+| where Timestamp > ago(24h)
+| where ActionType == "LogonFailed"
+| summarize Failures=count(), Devices=dcount(DeviceName) by AccountName, RemoteIP
+| order by Failures desc

@@ -1,0 +1,3 @@
+p,reader,documents,read
+p,editor,documents,write
+g,demo_alice,reader

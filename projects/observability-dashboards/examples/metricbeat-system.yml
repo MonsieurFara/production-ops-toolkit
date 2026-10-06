@@ -1,0 +1,5 @@
+metricbeat.modules:
+  - module: system
+    period: 10s
+    metricsets: [cpu, memory, filesystem, network]
+    cpu.metrics: [percentages, normalized_percentages]

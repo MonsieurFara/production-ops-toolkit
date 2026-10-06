@@ -1,0 +1,4 @@
+matricule,email,name,unit_code,job_title
+DEMO-001,alice@example.com,Nom RH Démo,UNIT-OPS,Ingénieur production
+DEMO-002,bob@example.com,Utilisateur RH Démo,UNIT-IT,Support
+DEMO-003,charlie@example.com,Nouvelle personne fictive,UNIT-IT,Analyste

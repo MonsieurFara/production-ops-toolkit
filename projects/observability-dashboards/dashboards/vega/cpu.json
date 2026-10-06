@@ -1,0 +1,129 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "title": "CPU normalisée",
+  "width": 600,
+  "height": 220,
+  "padding": 5,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "data": [
+    {
+      "name": "series",
+      "url": {
+        "%context%": true,
+        "%timefield%": "@timestamp",
+        "index": "metricbeat-*",
+        "body": {
+          "size": 0,
+          "aggs": {
+            "times": {
+              "date_histogram": {
+                "field": "@timestamp",
+                "fixed_interval": {
+                  "%autointerval%": true
+                },
+                "extended_bounds": {
+                  "min": {
+                    "%timefilter%": "min"
+                  },
+                  "max": {
+                    "%timefilter%": "max"
+                  }
+                },
+                "min_doc_count": 0
+              },
+              "aggs": {
+                "value": {
+                  "avg": {
+                    "field": "system.cpu.total.norm.pct"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "format": {
+        "property": "aggregations.times.buckets"
+      },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum.value.value)"
+        },
+        {
+          "type": "formula",
+          "as": "time",
+          "expr": "toDate(datum.key)"
+        },
+        {
+          "type": "formula",
+          "as": "percent",
+          "expr": "datum.value.value * 100"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "time",
+      "domain": {
+        "data": "series",
+        "field": "time"
+      },
+      "range": "width"
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": [
+        0,
+        100
+      ],
+      "range": "height",
+      "nice": true
+    }
+  ],
+  "axes": [
+    {
+      "orient": "bottom",
+      "scale": "x"
+    },
+    {
+      "orient": "left",
+      "scale": "y",
+      "title": "%"
+    }
+  ],
+  "marks": [
+    {
+      "type": "line",
+      "from": {
+        "data": "series"
+      },
+      "encode": {
+        "enter": {
+          "stroke": {
+            "value": "#42b7a6"
+          },
+          "strokeWidth": {
+            "value": 2
+          }
+        },
+        "update": {
+          "x": {
+            "scale": "x",
+            "field": "time"
+          },
+          "y": {
+            "scale": "y",
+            "field": "percent"
+          }
+        }
+      }
+    }
+  ]
+}

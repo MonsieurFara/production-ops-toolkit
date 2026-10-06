@@ -1,0 +1,136 @@
+{
+  "title": "Workflow Cohort Overview (Synthetic Lab)",
+  "uid": "ops-workflow-lab",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": true,
+  "tags": [
+    "lab",
+    "synthetic",
+    "workflows"
+  ],
+  "timezone": "browser",
+  "time": {
+    "from": "now-30d",
+    "to": "now"
+  },
+  "__inputs": [
+    {
+      "name": "DS_POSTGRESQL",
+      "label": "PostgreSQL Lab",
+      "type": "datasource",
+      "pluginId": "grafana-postgresql-datasource",
+      "pluginName": "PostgreSQL"
+    }
+  ],
+  "panels": [
+    {
+      "id": 1,
+      "title": "Démarrés",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 8,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "${DS_POSTGRESQL}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "rawSql": "SELECT $__timeGroupAlias(started_at,'1d'), count(*) AS volume FROM ops_demo.workflow_run WHERE $__timeFilter(started_at) GROUP BY 1 ORDER BY 1",
+          "format": "time_series",
+          "editorMode": "code",
+          "rawQuery": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Terminés",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 8,
+        "y": 0,
+        "w": 8,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "${DS_POSTGRESQL}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "rawSql": "SELECT $__timeGroupAlias(started_at,'1d'), count(*) AS volume FROM ops_demo.workflow_run WHERE $__timeFilter(started_at) AND status = 'completed' GROUP BY 1 ORDER BY 1",
+          "format": "time_series",
+          "editorMode": "code",
+          "rawQuery": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Anomalies",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 16,
+        "y": 0,
+        "w": 8,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "${DS_POSTGRESQL}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "rawSql": "SELECT $__timeGroupAlias(started_at,'1d'), count(*) AS volume FROM ops_demo.workflow_run WHERE $__timeFilter(started_at) AND status = 'anomaly' GROUP BY 1 ORDER BY 1",
+          "format": "time_series",
+          "editorMode": "code",
+          "rawQuery": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="650" viewBox="0 0 1100 650" role="img" aria-label="Dashboard de KPI sur données synthétiques">
+<rect width="1100" height="650" rx="20" fill="#0c1524"/>
+<text x="44" y="46" fill="#78a0c8" font-family="Arial,sans-serif" font-size="14" letter-spacing="2">ROBERT DE LELLI BEIDI · OBSERVABILITÉ</text>
+<text x="42" y="97" fill="#eff5ff" font-family="Arial,sans-serif" font-size="33" font-weight="bold">Indicateurs de production</text>
+<rect x="807" y="35" width="249" height="32" rx="16" fill="#143b36"/><text x="834" y="56" fill="#54d8ba" font-family="Arial,sans-serif" font-size="12">DONNÉES SYNTHÉTIQUES</text>
+<rect x="42" y="135" width="326" height="110" rx="12" fill="#142238" stroke="#263b55"/>
+<text x="62" y="164" fill="#97aec8" font-family="Arial,sans-serif" font-size="12">REQUÊTES ANALYSÉES</text>
+<text x="62" y="211" fill="#f1f6ff" font-family="Arial,sans-serif" font-size="29" font-weight="bold">120</text>
+<rect x="384" y="135" width="326" height="110" rx="12" fill="#142238" stroke="#263b55"/>
+<text x="404" y="164" fill="#97aec8" font-family="Arial,sans-serif" font-size="12">ERREURS SERVEUR</text>
+<text x="404" y="211" fill="#f1f6ff" font-family="Arial,sans-serif" font-size="29" font-weight="bold">2.50 %</text>
+<rect x="726" y="135" width="326" height="110" rx="12" fill="#142238" stroke="#263b55"/>
+<text x="746" y="164" fill="#97aec8" font-family="Arial,sans-serif" font-size="12">APDEX · T = 500 MS</text>
+<text x="746" y="211" fill="#f1f6ff" font-family="Arial,sans-serif" font-size="29" font-weight="bold">0.59</text>
+<rect x="42" y="263" width="326" height="110" rx="12" fill="#142238" stroke="#263b55"/>
+<text x="62" y="292" fill="#97aec8" font-family="Arial,sans-serif" font-size="12">LATENCE P95</text>
+<text x="62" y="339" fill="#f1f6ff" font-family="Arial,sans-serif" font-size="29" font-weight="bold">1843.60 ms</text>
+<rect x="384" y="263" width="326" height="110" rx="12" fill="#142238" stroke="#263b55"/>
+<text x="404" y="292" fill="#97aec8" font-family="Arial,sans-serif" font-size="12">MTTD</text>
+<text x="404" y="339" fill="#f1f6ff" font-family="Arial,sans-serif" font-size="29" font-weight="bold">6.33 min</text>
+<rect x="726" y="263" width="326" height="110" rx="12" fill="#142238" stroke="#263b55"/>
+<text x="746" y="292" fill="#97aec8" font-family="Arial,sans-serif" font-size="12">MTTR · CLÔTURÉS</text>
+<text x="746" y="339" fill="#f1f6ff" font-family="Arial,sans-serif" font-size="29" font-weight="bold">40.00 min</text>
+<rect x="42" y="405" width="1010" height="171" rx="13" fill="#142238" stroke="#263b55"/>
+<text x="64" y="438" fill="#eff5ff" font-family="Arial,sans-serif" font-size="17">État des workflows · cohorte synthétique</text>
+<text x="64" y="473" fill="#bdcde0" font-family="Arial,sans-serif" font-size="13">En cours</text><rect x="164" y="462" width="760" height="12" rx="6" fill="#263b55"/><rect x="164" y="462" width="532.00" height="12" rx="6" fill="#5a90f5"/><text x="954" y="473" fill="#eff5ff" font-family="Arial,sans-serif" font-size="14">63</text>
+<text x="64" y="504" fill="#bdcde0" font-family="Arial,sans-serif" font-size="13">Terminés</text><rect x="164" y="493" width="760" height="12" rx="6" fill="#263b55"/><rect x="164" y="493" width="177.33" height="12" rx="6" fill="#42d4b1"/><text x="954" y="504" fill="#eff5ff" font-family="Arial,sans-serif" font-size="14">21</text>
+<text x="64" y="535" fill="#bdcde0" font-family="Arial,sans-serif" font-size="13">Anomalies</text><rect x="164" y="524" width="760" height="12" rx="6" fill="#263b55"/><rect x="164" y="524" width="50.67" height="12" rx="6" fill="#f0ad58"/><text x="954" y="535" fill="#eff5ff" font-family="Arial,sans-serif" font-size="14">6</text>
+<text x="44" y="610" fill="#8ea6c2" font-family="Arial,sans-serif" font-size="13">Calculs reproductibles · exemples Grafana / Vega · scripts Python · données fictives</text>
+</svg>

@@ -1,0 +1,6 @@
+// Exercice original de laboratoire ; adapter le schéma et la fenêtre.
+SigninLogs
+| where TimeGenerated > ago(24h)
+| where tostring(ResultType) != "0"
+| summarize Failures=count(), Accounts=dcount(UserPrincipalName) by IPAddress, bin(TimeGenerated, 15m)
+| order by Failures desc

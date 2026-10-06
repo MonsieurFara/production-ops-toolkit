@@ -1,0 +1,4 @@
+id,latitude,longitude,status
+DEMO-P-001,20.00,-30.00,available
+DEMO-P-002,20.01,-30.02,review
+DEMO-P-003,20.03,-30.01,available

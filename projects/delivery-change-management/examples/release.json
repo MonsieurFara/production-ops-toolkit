@@ -1,0 +1,21 @@
+{
+  "name": "demo-workflow-service",
+  "version": "0.2.0",
+  "change_reference": "CHG-DEMO-001",
+  "artifacts": [
+    {
+      "path": "demo-artifact.txt",
+      "sha256": "95b08936a78f2182f2e241b3591ecf14bddead2342e1be6c51093db737ec3e39"
+    }
+  ],
+  "dependencies": [
+    "database",
+    "identity-provider"
+  ],
+  "rollback": "Revenir à la release de laboratoire précédente après vérification des données.",
+  "checks": [
+    "health endpoint",
+    "parcours synthétique",
+    "analyse des erreurs"
+  ]
+}

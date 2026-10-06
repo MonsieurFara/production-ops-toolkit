@@ -1,0 +1,9 @@
+// Exercice original de laboratoire ; adapter le schéma et la fenêtre.
+let failures = SigninLogs
+| where TimeGenerated > ago(24h) and tostring(ResultType) != "0"
+| summarize Failed=count(), LastFailure=max(TimeGenerated) by UserPrincipalName, IPAddress;
+SigninLogs
+| where TimeGenerated > ago(24h) and tostring(ResultType) == "0"
+| join kind=inner failures on UserPrincipalName, IPAddress
+| where TimeGenerated > LastFailure and TimeGenerated < LastFailure + 30m
+| project TimeGenerated, UserPrincipalName, IPAddress, Failed, LastFailure

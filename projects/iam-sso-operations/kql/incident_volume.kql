@@ -1,0 +1,5 @@
+// Exercice original de laboratoire ; adapter le schéma et la fenêtre.
+SecurityIncident
+| where TimeGenerated > ago(30d)
+| summarize arg_max(TimeGenerated, *) by IncidentNumber
+| summarize Incidents=count() by Severity, Status

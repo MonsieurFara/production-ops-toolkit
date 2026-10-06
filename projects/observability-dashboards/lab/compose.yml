@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: lab
+      POSTGRES_DB: lab
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Définir un mot de passe privé de laboratoire}
+    ports:
+      - '127.0.0.1:15432:5432'
+    volumes:
+      - lab-data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+volumes:
+  lab-data:

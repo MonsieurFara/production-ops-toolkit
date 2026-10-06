@@ -1,0 +1,43 @@
+{
+  "dataset": "synthetic-demo",
+  "traffic": {
+    "requests": 120,
+    "server_errors": 3,
+    "server_error_pct": 2.5,
+    "apdex_threshold_ms": 500,
+    "apdex": 0.5916666666666667,
+    "latency_p50_ms": 985.0,
+    "latency_p95_ms": 1843.6
+  },
+  "incidents": {
+    "incidents": 3,
+    "open_incidents": 1,
+    "closed_incidents": 2,
+    "mttd_minutes": 6.333333333333333,
+    "mttr_minutes": 40.0
+  },
+  "workflows": {
+    "total": 90,
+    "active": 63,
+    "completed": 21,
+    "anomaly": 6,
+    "closure_pct": 23.333333333333332,
+    "by_process": {
+      "Documents": {
+        "active": 21,
+        "completed": 7,
+        "anomaly": 2
+      },
+      "Absences": {
+        "active": 20,
+        "completed": 8,
+        "anomaly": 2
+      },
+      "Validation": {
+        "active": 22,
+        "completed": 6,
+        "anomaly": 2
+      }
+    }
+  }
+}

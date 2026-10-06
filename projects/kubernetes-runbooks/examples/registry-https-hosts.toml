@@ -1,0 +1,4 @@
+server = "https://registry.example.com"
+[host."https://registry.example.com"]
+  capabilities = ["pull", "resolve"]
+  ca = "/etc/containerd/certs.d/registry.example.com/ca.crt"
