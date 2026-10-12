@@ -1,0 +1,46 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "workflow-app",
+    "namespace": "ops-lab"
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "annotations": {
+          "production-ops-toolkit/process-cancel-sha256": "d0860be1ef2b3cb34ae16ebcf25f910766cf89e0c2a412855cd5d15c7a194d9a"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "workflow-app",
+            "volumeMounts": [
+              {
+                "name": "process-cancel-ui",
+                "mountPath": "/usr/local/tomcat/webapps/activiti-app/workflow/views/modal/process-cancel.html",
+                "subPath": "process-cancel.html",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "volumes": [
+          {
+            "name": "process-cancel-ui",
+            "configMap": {
+              "name": "process-cancel-ui",
+              "items": [
+                {
+                  "key": "process-cancel.html",
+                  "path": "process-cancel.html"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -15,3 +15,5 @@ jobs:
           node-version: '22'
       - name: Syntax and functional tests
         run: python3 tools/validate_collection.py
+      - name: Verify published file inventory
+        run: python3 tools/inventory.py --check

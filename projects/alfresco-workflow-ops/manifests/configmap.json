@@ -1,0 +1,11 @@
+{
+  "apiVersion": "v1",
+  "kind": "ConfigMap",
+  "metadata": {
+    "name": "process-cancel-ui",
+    "namespace": "ops-lab"
+  },
+  "data": {
+    "process-cancel.html": "<div class=\"modal\" ng-controller=\"CancelProcessCtrl\">\n\t<div class=\"modal-dialog\">\n\t\t<div class=\"modal-content\">\n\t\t\t<div class=\"modal-header\">\n                <h3 class=\"margin-center-align\">This process cannot be cancelled</h3>\n\t\t\t\t<button type=\"button\" class=\"close\" ng-click=\"$hide()\">&times;</button>\n\t\t\t</div>\n\t\t\t<div class=\"modal-body\">\n\t\t\t\t<p>For further assistance, please contact your system administrator</p>\n\t\t\t</div>\n\t\t\t<div class=\"modal-footer\">\n\t\t\t\t<div class=\"float-right margin-center-align\">\n\t\t\t\t\t<button type=\"button\" class=\"btn btn-sm btn-secondary\" ng-click=\"$hide()\" ng-disabled=\"popup.loading\">\n\t\t\t\t\t\tClose Window\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"loading float-right\" ng-show=\"popup.loading\">\n\t\t\t\t\t<div class=\"l1\"></div><div class=\"l2\"></div><div class=\"l2\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n"
+  }
+}

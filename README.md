@@ -8,9 +8,14 @@ Scripts, requêtes SQL, diagnostics, dashboards et procédures pour l'exploitati
 de plateformes d'entreprise. La collection rassemble neuf projets autonomes,
 avec leurs exemples, tests, documentation et indications de provenance.
 
-**9 projets techniques · 56 thèmes documentés · 25 fichiers SQL · 4 dashboards**
+**9 projets techniques · 58 thèmes documentés · 25 fichiers SQL · 4 dashboards**
 
 [Profil professionnel](https://github.com/MonsieurFara) · [Catalogue complet](docs/PROJECTS.md) · [Origine des contenus](PROVENANCE.md) · [Validation](VALIDATION.md)
+
+La [reprise du 12 octobre](docs/RECOVERY-20261012.md) ajoute un source HTML APS
+retrouvé, sa variante de fermeture, un générateur de manifests ConfigMap et
+Deployment, un guide Java/TLS et des correctifs de validation. L'[inventaire
+SHA-256](docs/FILE-INVENTORY.sha256) permet de vérifier les fichiers publiés.
 
 ## Explorer les projets
 
@@ -46,16 +51,18 @@ Les données de démonstration sont synthétiques.
 git clone https://github.com/MonsieurFara/production-ops-toolkit.git
 cd production-ops-toolkit
 python3 tools/validate_collection.py
+python3 tools/inventory.py --check
 ```
 
 Pour utiliser un outil, consulter le README de son projet et se placer dans
 `projects/<nom-du-projet>`. Les prérequis varient : Python, Bash, Node.js,
 PowerShell avec le module Active Directory, ou un laboratoire dédié.
 
-La validation locale a exécuté **44 tests fonctionnels** des projets et les
-contrôles de syntaxe Bash, Python, JavaScript et JSON. Le workflow GitHub Actions
-reprend ces contrôles à chaque changement. Les opérations sur des plateformes
-réelles et les imports de dashboards restent à vérifier dans un laboratoire.
+Le workflow GitHub Actions exécute les tests fonctionnels des projets et les
+contrôles de syntaxe Bash, Python, JavaScript et JSON, puis vérifie l'inventaire
+des fichiers. Les résultats et limites de la reprise sont consignés dans
+[VALIDATION.md](VALIDATION.md). Les opérations sur des plateformes réelles et
+les imports de dashboards restent à vérifier dans un laboratoire.
 
 ## Travaux documentés et projets en cours
 

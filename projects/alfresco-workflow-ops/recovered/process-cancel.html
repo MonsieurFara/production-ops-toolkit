@@ -1,0 +1,23 @@
+<div class="modal" ng-controller="CancelProcessCtrl">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+                <h3 class="margin-center-align">This process cannot be cancelled</h3>
+				<button type="button" class="close" ng-click="$hide()">&times;</button>
+			</div>
+			<div class="modal-body">
+				<p>For further assistance, please contact your system administrator</p>
+			</div>
+			<div class="modal-footer">
+				<div class="float-right margin-center-align">
+					<button type="button" class="btn btn-sm btn-secondary" ng-click="cancel()" ng-disabled="popup.loading">
+						Close Window
+					</button>
+				</div>
+				<div class="loading float-right" ng-show="popup.loading">
+					<div class="l1"></div><div class="l2"></div><div class="l2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

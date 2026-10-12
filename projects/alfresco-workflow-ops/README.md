@@ -28,3 +28,20 @@ fourni, puis redémarre le deployment. Le backup doit être sur un volume persis
 Prérequis : Python 3.12, kubectl pour le runbook Solr et accès de laboratoire.
 Tests sur réponses JSON fictives et garde-fous du plan ; aucune correction
 appliquée à un service réel pendant la préparation.
+
+## Personnalisation APS récupérée
+
+Le [guide de la modale process-cancel](docs/process-cancel-customization.md)
+présente le [HTML historique](recovered/process-cancel.html), ses limites et une
+[variante fermant la fenêtre](examples/process-cancel-close-only.html).
+Le générateur prépare une ConfigMap et un patch de Deployment, sans contacter
+le cluster :
+
+```bash
+python3 scripts/plan_process_cancel_patch.py --namespace ops-lab \
+  --deployment workflow-app --container workflow-app --output artifacts/process-cancel
+```
+
+Des [manifests d'exemple](manifests) sont fournis. Le guide explique leur
+adaptation, la validation et le retour arrière. L'autorisation d'annuler un
+processus doit être contrôlée côté serveur.

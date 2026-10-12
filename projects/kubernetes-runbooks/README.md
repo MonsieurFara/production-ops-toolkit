@@ -25,6 +25,11 @@ des conteneurs, Secret, ConfigMap ni logs applicatifs.
 | [Réseau et dépendances](docs/network-and-dependencies.md) | DNS, Service, endpoints, TCP/gRPC, Ingress et CORS |
 | [Registres containerd](docs/containerd-registries.md) | Certificats, hosts.toml, registre HTTP de laboratoire et image absente |
 | [Déploiement et opérations](docs/deployment-lifecycle.md) | Rollout, probes, arrêt propre, pods Terminating et changements de configuration |
+| [Java, TLS et truststore](docs/java-tls-truststore.md) | SAN/SNI, chaîne de confiance, hostname et résolution dans le pod |
+
+Le [cas APS récupéré](../alfresco-workflow-ops/docs/process-cancel-customization.md)
+comprend un générateur de ConfigMap et de patch Deployment pour remplacer un
+fichier d'interface de manière versionnée.
 
 Les manifests sont des exemples à adapter ; aucun manifeste n'est appliqué
 automatiquement. Tests locaux sur sélection de pods simulés et parsing des
